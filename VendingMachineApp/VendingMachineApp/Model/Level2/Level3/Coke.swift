@@ -16,7 +16,9 @@ class Coke: Soda, LowCalorieChecker {
         super.init(brand: brand, capacity: capacity, price: price, name: name, manufacture: manufacture, taste: taste, expiredAt: expiredAt)
     }
     
-    func isLowCalorie(over standard: Int) -> Bool {
-        return calorie < standard
+    func isLowCalorie() -> Bool {
+        let lowCalorie = 10
+        
+        return calorie < lowCalorie
     }
 }

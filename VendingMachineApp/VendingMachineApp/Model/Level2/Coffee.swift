@@ -16,7 +16,9 @@ class Coffee: Beverage, CustomStringConvertible, Hotable {
         super.init(brand: brand, capacity: capacity, price: price, name: name, manufacture: manufacture, expiredAt: expiredAt)
     }
     
-    public func isHot(over standard: Int) -> Bool {      
-        return temperature > standard
+    public func isHot() -> Bool {
+        let hotTemperatue = 60
+        
+        return temperature > hotTemperatue
     }
 }

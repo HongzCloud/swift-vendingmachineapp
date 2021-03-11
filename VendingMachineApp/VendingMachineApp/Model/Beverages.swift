@@ -57,11 +57,11 @@ class Beverages {
         return allList
     }
     
-    public func showExpiryDateBeverage(over standard: Date) -> [SafeDateChecker] {
+    public func showExpiryDateBeverage() -> [SafeDateChecker] {
         var list = [SafeDateChecker]()
         
         beverages.forEach { (beverage) in
-            if beverage.isExpired(over: standard) {
+            if beverage.isExpired() {
                 list.append(beverage)
             }
         }
@@ -69,12 +69,12 @@ class Beverages {
         return list
     }
     
-    public func showHotBeverage(over standard: Int) -> [Hotable] {
+    public func showHotBeverage() -> [Hotable] {
         var list = [Hotable]()
 
         beverages.forEach { (beverage) in
             if let hotableBeverage = beverage as? Hotable {
-                if hotableBeverage.isHot(over: standard) {
+                if hotableBeverage.isHot() {
                     list.append(hotableBeverage)
                 }
             }
