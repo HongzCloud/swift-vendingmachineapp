@@ -10,7 +10,7 @@ import UIKit
 class BeverageViewCell: UICollectionViewCell {
     static let identifier = "BeverageViewCell"
 
-    private(set) var beveragesView: BeverageView
+    var beveragesView: BeverageView
     
     override init(frame: CGRect) {
         beveragesView = BeverageView(frame: CGRect(x: 0, y: 0, width: frame.width, height: frame.height))
@@ -20,12 +20,13 @@ class BeverageViewCell: UICollectionViewCell {
     }
 
     required init?(coder: NSCoder) {
-        beveragesView = BeverageView()
-        super.init(coder: coder)
-        beveragesView = BeverageView(frame: CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height))
-        contentView.addSubview(beveragesView)
+        fatalError("init(coder:) has not been implemented")
     }
 
+    public func setup() {
+       
+    }
+    
     public func changeImage(image: UIImage) {
         beveragesView.setImage(image: image)
     }

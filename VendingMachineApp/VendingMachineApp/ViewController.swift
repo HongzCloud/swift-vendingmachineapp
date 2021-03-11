@@ -33,14 +33,15 @@ class ViewController: UIViewController {
     }
     
     @IBAction func addMoney5000(_ sender: Any) {
-        vendingMachine.put(in: .fiveThousand)
+        vendingMachine.put(in: 5000)
         moneyLabel.text = "잔액: \(vendingMachine.showCurrentMoney()) 원"
     }
     
     @IBAction func addMoney1000(_ sender: Any) {
-        vendingMachine.put(in: .thousand)
+        vendingMachine.put(in: 1000)
         moneyLabel.text = "잔액: \(vendingMachine.showCurrentMoney()) 원"
     }
+    
 }
 
 extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
@@ -62,7 +63,7 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
         }
         return cell
     }
-
+    
     private func initializeHelpers(cell: BeverageViewCell, indexPath: IndexPath) {
         updateModelHelper[cell.beveragesView.addToInventoryButton] = types[indexPath.row]
         updateLabelHelper[cell.beveragesView.addToInventoryButton] = cell.beveragesView.numberOfBeveragesLabel
